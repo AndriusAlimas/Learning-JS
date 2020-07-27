@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+   <head>
+        <meta charset="utf-8">
+       <title>objects constructors</title>
+    </head>
+    
+    <body>
+        <p>JavaScript.</p>
+      
+        
+    <script >
+    function Phone(make, model, warranty, color){
+        // define properties for constructors:
+        this.make = make;
+        this.model = model;
+        this.warranty = warranty;
+        this.color = color;
+        
+        // define a method for constructors
+        this.extendWarranty = function(newWarranty){
+//            this.warranty = this.warranty + newWarranty;
+            this.warranty+=newWarranty;
+        }
+    }
+        
+        var myPhone = new Phone("Apple", "Iphone",12,"white");
+        
+        var console = window.console;
+        console.log(myPhone);
+        
+        myPhone.extendWarranty(12);
+        console.log(myPhone.warranty);
+        
+        // add new property to object:
+        myPhone.condition = "like new";
+        
+        console.log(myPhone);
+        console.log(myPhone.condition);
+        
+        var myBrotersPhone = new Phone("Samsung", "Note", 6, "silver");
+        console.log(myBrotersPhone);
+        // you can see we cannot see condition because its declared not in constructor so new object dont get this:
+        console.log(myBrotersPhone.condition);
+        
+        // to addd  new property from outside constructor we use this sintax of code:
+        
+        Phone.prototype.condition = "new"; // all new phone object will have this new property with new condtion
+        console.log(myBrotersPhone.condition);
+        console.log(myPhone.condition); // its not effected from previously created phone object
+        
+        var other = new Phone();
+        console.log(other.condition);
+    </script>    
+    </body>
+</html>

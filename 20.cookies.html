@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>cookies</title>
+    </head>
+    <body>
+        <p id="myParagraph">JavaScript.</p>
+        <script>
+            document.cookie = "username = Hinokame";
+            document.cookie = "age = 33";
+            document.cookie = "country = UK";
+            
+            window.alert(document.cookie);
+            
+            var cookieArr = document.cookie.split(';');
+            window.alert(cookieArr);
+            
+            for(i = 0; i < cookieArr.length;i++){
+                document.getElementById("myParagraph").innerHTML += "<br />" + cookieArr[i];
+            }
+        </script>
+    </body>
+</html>

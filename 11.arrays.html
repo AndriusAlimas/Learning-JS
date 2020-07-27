@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+   <head>
+        <meta charset="utf-8">
+       <title>Arrays</title>
+    </head>
+    
+    <body>
+        <p id="myParagraph">JavaScript.</p>
+      
+        
+    <script>
+        // create an array objects of shopping list:
+        var shoppingList = ["bread", "eggs", "milk"];
+        // other way to create arrays with using new keyword, because array are objects as well:
+//        var shoppingList = new Array("bread","eggs","milk");
+//        document.getElementById("myParagraph").innerHTML += "<br /> " + shoppingList;
+//        document.getElementById("myParagraph").innerHTML += "<br /> " + shoppingList[0];
+//        document.getElementById("myParagraph").innerHTML += "<br /> " + shoppingList[2];
+        
+        // better way to do with function to avoid duplications:
+        showResult(shoppingList);
+        showResult(shoppingList[0]);
+        showResult(shoppingList[2]);
+        
+        // change second item of the list, just simply access with coresponding index number and change a value:
+        shoppingList[1] = "yogurt";
+        
+        // show result:
+        showResult(shoppingList);
+    
+        shoppingList[2] = "orange";
+        showResult(shoppingList);
+        
+        // to delete one of item from our list simply use keyword delete and specify index number which item you want to delete:
+        delete shoppingList[1];
+        
+        // show delete item result:
+        showResult(shoppingList);
+        
+        // it seems we deleted item not colpeted just a value, so lets add again this value and try delete permenantly:
+        shoppingList[1] = "yogurt";
+        // first parameter position where deletion will happen, 2 parameter from that position moving forward how many items you want to delete:
+        shoppingList.splice(1,1);
+        showResult(shoppingList);
+        
+        // if you want add something few or more items in between elements you can use same method, but this time using adding properties:
+        shoppingList.splice(1,0,"bananas", "apples"); // 2 parameter is 0 because we dont want delete anything
+        showResult(shoppingList);
+        
+        // if you want sort your areays by natural order use simply sort function:
+        shoppingList.sort();
+        showResult(shoppingList);
+        
+        // and if you want reverse order simply use function reverse():
+        shoppingList.reverse();
+        showResult(shoppingList);
+        
+        var myString = "what is the weather today?";
+        // if you want to split your string using pattern in split method you can split your string in chunks of data and put to arrays
+        var myArray = myString.split(" ");
+        showResult(myArray);
+        
+        // or you can use split method and define second parameter which you will give maximum number of elements to be split:
+        var otherString = "my name is Andrius , and i am glad to know you better";
+        var otherArray = otherString.split(" ",2);
+        showResult(otherArray);
+      
+        function showResult(x){
+               document.getElementById("myParagraph").innerHTML += "<br /> " +x;
+        }
+    </script>    
+    </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>variables and data types</title>
+        
+        <style>
+            .bluebox{
+                background-color: #4267B2;
+                color: white;
+                height: 100px;
+                width: auto;
+            }
+            .yellowbox{
+                background-color: rgb(178, 148, 71);
+                height: 100px;
+                width: auto;
+            }
+            .greenbox{
+                background-color: #5fa832;
+                height: 100px;
+                width: auto;
+            }
+            .great{
+               color: #ea23a4;
+            }
+        </style>
+    </head>
+    
+    <body>
+         <div class="bluebox" id="facebook">
+            <p>Facebook is <span class="great">great</span>.</p>
+        </div>
+        
+        <div class="yellowbox" id="apple">
+            <p>Apple.</p>
+        </div>
+        
+        <div class="greenbox">
+            <p>Microsoft.</p>
+        </div>
+        <button id="button1">Change Facebook Style</button>
+        <button id="button2">Change Apple Style</button>
+        <script>
+           var x = 3;
+           window.console.log(x); 
+           var y;
+           y = 5;
+           var z;
+           window.console.log("the value of z is " + z);
+           z = x + y;
+            
+            var obj = window.console;
+            
+            obj.log("type of z is " + typeof(z));
+           obj.log("the value of z is " + z);
+           z = x + " " + y;
+            obj.log("type of z is " + typeof(z));
+           obj.log("the value of z is " + z);
+            
+            var greeting = "hello";
+            var firstname = "Andrius";
+            var msg = greeting + " " + firstname;
+            
+            obj.log(msg);
+            obj.log("type of msg is " + typeof(msg));
+            
+            var check = (x == 5);
+            obj.log("check value is " + check);
+            obj.log("type of check is " + typeof(check))
+            
+            var myArray = [1,2,3];
+            obj.log("My array is " + myArray);
+            
+            window.console.log("type of myArray is " + typeof(myArray));
+        </script>
+    </body>
+
+</html>

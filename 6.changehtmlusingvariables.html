@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>change html using variables</title>
+        
+        <style>
+            .bluebox{
+                background-color: #4267B2;
+                color: white;
+                height: 100px;
+                width: auto;
+            }
+            .yellowbox{
+                background-color: rgb(178, 148, 71);
+                height: 100px;
+                width: auto;
+            }
+            .greenbox{
+                background-color: #5fa832;
+                height: 100px;
+                width: auto;
+            }
+            .great{
+               color: #ea23a4;
+            }
+        </style>
+    </head>
+    
+    <body>
+         <div class="bluebox" id="facebook">
+            <p>Facebook is <span class="great">great</span>.</p>
+        </div>
+        
+        <div class="yellowbox" id="apple">
+            <p>Apple.</p>
+        </div>
+        
+        <div class="greenbox">
+            <p>Microsoft.</p>
+        </div>
+        <button id="button1">Change Facebook Style</button>
+        <button id="button2">Change Apple Style</button>
+        <script>
+          var color = "rgb(18, 149, 68)";
+            var color;
+            document.getElementById("button1").onclick = function(){
+                document.getElementById("facebook").style.backgroundColor = color;
+                //               window.alert("color" + color);
+            }
+//            declare all three  variables in one line, and one more for apple color result 
+            var r, g, b, appleColor;
+            document.getElementById("button2").onclick = function(){
+                
+            //                get random value for color red
+                 r = Math.round(Math.random() * 256);
+                //                get random value for color green
+                 g = Math.round(Math.random() * 256);
+                //                get random value for color blue
+                 b = Math.round(Math.random() * 256);
+                
+                appleColor = "rgb("+r + ", " + g + ", " + b + ")";
+
+                
+                document.getElementById("apple").style.backgroundColor = appleColor;
+                 document.getElementById("apple").innerHTML = "<p>" + appleColor + "</p>";
+            }
+        </script>
+    </body>
+
+</html>
